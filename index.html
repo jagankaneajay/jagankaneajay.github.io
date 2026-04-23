@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagan Ajayakumar — AI Product Lead</title>
+<meta name="description" content="Product Manager specializing in AI, Automation, and API Integrations. Building products that make life easier through thoughtful design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --surface: #FFFFFF;
+    --border: #E8E6E1;
+    --border-hover: #D0CEC8;
+    --text: #1A1A18;
+    --text-secondary: #6B6B66;
+    --accent: #2D5A27;
+    --accent-light: rgba(45, 90, 39, 0.08);
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'Libre Franklin', -apple-system, sans-serif;
+    --max-w: 920px;
+    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  body {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  a:hover { opacity: 0.7; }
+
+  img { display: block; }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+  }
+
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover {
+    color: var(--text);
+    opacity: 1;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 72px 32px 64px;
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero-text {
+    opacity: 0;
+    animation: fadeIn 0.6s 0.1s var(--ease) forwards;
+  }
+
+  .hero-tagline {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .hero-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 520px;
+  }
+
+  .hero-photo {
+    opacity: 0;
+    animation: fadeIn 0.6s 0.25s var(--ease) forwards;
+  }
+
+  .hero-photo img {
+    width: 240px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    filter: grayscale(0.15);
+    transition: filter 0.4s;
+  }
+  .hero-photo img:hover {
+    filter: grayscale(0);
+  }
+
+  .hero-logos {
+    margin-top: 32px;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.4s var(--ease) forwards;
+  }
+
+  .hero-logos p {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .logo-pill {
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--surface);
+  }
+
+  /* ---- SECTIONS ---- */
+  section {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 64px 32px;
+  }
+
+  .section-divider {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .section-divider hr {
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-header {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    margin-bottom: 36px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---- PROJECT CARDS ---- */
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 36px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  }
+  .project-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  }
+
+  .project-industry {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+
+  .project-name {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .project-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 640px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg);
+  }
+
+  /* ---- SKILLS / WHAT I BRING ---- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    transition: border-color 0.3s;
+  }
+  .skill-card:hover {
+    border-color: var(--border-hover);
+  }
+
+  .skill-card h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+
+  .skill-card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ---- CONTACT ---- */
+  .contact-section {
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 100px;
+  }
+
+  .contact-section .section-header {
+    margin-bottom: 16px;
+  }
+
+  .contact-sub {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.25s var(--ease);
+  }
+  .contact-btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .contact-btn-primary:hover {
+    opacity: 0.88;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+  .contact-btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .contact-btn-outline:hover {
+    border-color: var(--text);
+    opacity: 1;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 700px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 48px 24px 40px;
+    }
+    .hero-photo { order: -1; }
+    .hero-photo img { width: 160px; height: 190px; }
+    section { padding: 48px 24px; }
+    .section-divider { padding: 0 24px; }
+    nav { padding: 0 20px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 0.75rem; }
+    .project-card { padding: 24px; }
+  }
+
+  @media (max-width: 440px) {
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-name">Jagan</div>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-text">
+    <div class="hero-tagline">Product Manager &bull; AI &amp; Automation &bull; API Integrations</div>
+    <h1>Hi! I'm Jagan</h1>
+    <p class="hero-desc">
+      I love building products that make life easier through automation and thoughtful design. My experience spans AI-driven solutions, API integrations, and digital platforms, working across teams to bring ideas to life and create seamless user experiences.
+    </p>
+    <p class="hero-desc" style="margin-top: 14px;">
+      I've worked on enterprise integrations, EdTech platforms, and AI-powered automation tools, always focusing on solving real problems with practical solutions. Whether it's improving workflows, launching new features, or optimizing a product strategy, I enjoy the challenge of making things work better.
+    </p>
+    <p class="hero-desc" style="margin-top: 14px;">
+      Currently, I'm experimenting with AI agents, automation, and scalable product solutions. Always looking for new ways to build and innovate.
+    </p>
+    <div class="hero-logos">
+      <p>Product Leadership Experience at</p>
+      <div class="logo-row">
+        <span class="logo-pill">The Phoenix</span>
+        <span class="logo-pill">Deloitte</span>
+        <span class="logo-pill">Devtown</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="headshot.png" alt="Jagan Ajayakumar" />
+  </div>
+</header>
+
+<div class="section-divider"><hr></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-header reveal">Projects</h2>
+
+  <div class="project-card reveal">
+    <span class="project-industry">AI</span>
+    <h3 class="project-name">WhatsApp AI Calendar Agent</h3>
+    <p class="project-desc">
+      Developed a WhatsApp AI Scheduling Assistant that automates meeting coordination using n8n, Google Calendar, and OpenRouter's LLMs. The AI agent listens for scheduling requests in WhatsApp, checks availability in Google Calendar, and either confirms the event or suggests alternatives — all without manual input. By leveraging low-code automation and AI, this project showcases how intelligent agents can streamline everyday tasks, reducing friction in scheduling and enabling broader automation in CRM, onboarding, and beyond.
+    </p>
+    <div class="tags">
+      <span class="tag">AI Agents</span>
+      <span class="tag">Workflow Automation</span>
+      <span class="tag">API Integrations</span>
+    </div>
+  </div>
+
+  <div class="project-card reveal">
+    <span class="project-industry">Real Estate</span>
+    <h3 class="project-name">LeadGen Flow</h3>
+    <p class="project-desc">
+      Designed and product-managed "LeadGen Flow," an AI-powered lead generation and web scraping workflow to empower small businesses. Conducted user research to identify inefficiencies in lead sourcing for real estate agents, then built a solution that scrapes targeted data, processes it with AI, and delivers actionable leads. Features include automated data extraction, lead filtering, and integration with user workflows — driving efficiency and measurable ROI. Iterated based on user feedback to ensure scalability and ease of use.
+    </p>
+    <div class="tags">
+      <span class="tag">Product Management</span>
+      <span class="tag">UX Research</span>
+      <span class="tag">Data Analysis</span>
+      <span class="tag">Customer Research</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<!-- WHAT I BRING -->
+<section id="skills">
+  <h2 class="section-header reveal">What I Bring to the Table</h2>
+
+  <div class="skills-grid reveal">
+    <div class="skill-card">
+      <h3>AI &amp; Agents</h3>
+      <p>Multi-agent orchestration, RAG pipelines, LLM integration, workflow automation</p>
+    </div>
+    <div class="skill-card">
+      <h3>Product Strategy</h3>
+      <p>Roadmapping, feature prioritization, KPI definition, competitive analysis</p>
+    </div>
+    <div class="skill-card">
+      <h3>User Research</h3>
+      <p>Customer research, persona development, usability testing, user journey mapping</p>
+    </div>
+    <div class="skill-card">
+      <h3>Platform &amp; APIs</h3>
+      <p>API integrations, platform development, Salesforce, AWS, ecosystem design</p>
+    </div>
+    <div class="skill-card">
+      <h3>Technical</h3>
+      <p>Python, PySpark, machine learning, data analysis, software engineering</p>
+    </div>
+    <div class="skill-card">
+      <h3>Delivery</h3>
+      <p>Agile, Scrum, backlog management, cross-functional team leadership</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <h2 class="section-header reveal">Let's Get in Touch</h2>
+  <p class="contact-sub reveal">Open to new opportunities and interesting conversations.</p>
+  <div class="contact-links reveal">
+    <a href="mailto:jagankaneajay@gmail.com" class="contact-btn contact-btn-primary">Email Me</a>
+    <a href="https://www.linkedin.com/in/jagan-ajaya/" target="_blank" rel="noopener" class="contact-btn contact-btn-outline">LinkedIn</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 Jagan Ajayakumar
+</footer>
+
+<!-- SCROLL REVEAL -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
