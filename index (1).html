@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagan Ajayakumar — AI Product Lead</title>
+<meta name="description" content="Product Manager specializing in AI, Automation, and API Integrations. Building products that make life easier through thoughtful design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --surface: #FFFFFF;
+    --border: #E8E6E1;
+    --border-hover: #D0CEC8;
+    --text: #1A1A18;
+    --text-secondary: #6B6B66;
+    --accent: #2D5A27;
+    --accent-light: rgba(45, 90, 39, 0.08);
+    --phoenix-color: #C84B31;
+    --phoenix-light: rgba(200, 75, 49, 0.08);
+    --deloitte-color: #4a7a14;
+    --deloitte-light: rgba(134, 188, 37, 0.08);
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'Libre Franklin', -apple-system, sans-serif;
+    --max-w: 920px;
+    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: var(--bg); color: var(--text); }
+  body { font-family: var(--sans); font-weight: 400; font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+  a:hover { opacity: 0.7; }
+  img { display: block; }
+
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(250,250,248,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 32px; }
+  .nav-inner { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-name { font-family: var(--serif); font-size: 1.2rem; color: var(--text); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.04em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); opacity: 1; }
+
+  .hero { max-width: var(--max-w); margin: 0 auto; padding: 72px 32px 64px; display: grid; grid-template-columns: 1fr 240px; gap: 56px; align-items: center; }
+  .hero-text { opacity: 0; animation: fadeIn 0.6s 0.1s var(--ease) forwards; }
+  .hero-tagline { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .hero-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.75; max-width: 520px; }
+  .hero-photo { opacity: 0; animation: fadeIn 0.6s 0.25s var(--ease) forwards; }
+  .hero-photo img { width: 240px; height: 280px; object-fit: cover; object-position: center top; border-radius: 12px; filter: grayscale(0.15); transition: filter 0.4s; }
+  .hero-photo img:hover { filter: grayscale(0); }
+  .hero-logos { margin-top: 32px; opacity: 0; animation: fadeIn 0.6s 0.4s var(--ease) forwards; }
+  .hero-logos p { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; }
+  .logo-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .logo-pill { padding: 6px 16px; border: 1px solid var(--border); border-radius: 100px; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); background: var(--surface); }
+
+  section { max-width: var(--max-w); margin: 0 auto; padding: 64px 32px; }
+  .section-divider { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
+  .section-divider hr { border: none; border-top: 1px solid var(--border); }
+  .section-header { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; margin-bottom: 36px; letter-spacing: -0.01em; }
+
+  .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 36px; margin-bottom: 20px; transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease); display: grid; grid-template-columns: 1fr 200px; gap: 32px; align-items: start; }
+  .project-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+  .project-card-full { grid-template-columns: 1fr; }
+  .project-industry { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 4px 12px; border-radius: 100px; margin-bottom: 14px; }
+  .project-industry.phoenix { color: var(--phoenix-color); background: var(--phoenix-light); }
+  .project-industry.deloitte { color: var(--deloitte-color); background: var(--deloitte-light); }
+  .project-name { font-family: var(--serif); font-size: 1.4rem; margin-bottom: 12px; letter-spacing: -0.01em; }
+  .project-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+  .project-visual { display: flex; align-items: center; justify-content: center; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; min-height: 160px; }
+  .project-visual svg { width: 100%; height: auto; max-height: 180px; }
+  .project-stat { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-light); color: var(--accent); padding: 4px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; margin-bottom: 16px; margin-right: 8px; }
+  .project-stat.phoenix { background: var(--phoenix-light); color: var(--phoenix-color); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { padding: 4px 12px; border: 1px solid var(--border); border-radius: 100px; font-size: 0.7rem; font-weight: 500; color: var(--text-secondary); background: var(--bg); }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: border-color 0.3s; }
+  .skill-card:hover { border-color: var(--border-hover); }
+  .skill-card h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; margin-bottom: 6px; }
+  .skill-card p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+  .exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-period { font-size: 0.82rem; color: var(--text-secondary); padding-top: 4px; }
+  .exp-role { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 4px; }
+  .exp-company { color: var(--accent); font-size: 0.85rem; font-weight: 500; margin-bottom: 10px; }
+  .exp-desc { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; }
+
+  .contact-section { text-align: center; padding-top: 48px; padding-bottom: 100px; }
+  .contact-section .section-header { margin-bottom: 16px; }
+  .contact-sub { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 32px; }
+  .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .contact-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-family: var(--sans); font-size: 0.85rem; font-weight: 500; transition: all 0.25s var(--ease); }
+  .contact-btn-primary { background: var(--accent); color: #fff; }
+  .contact-btn-primary:hover { opacity: 0.88; color: #fff; transform: translateY(-1px); }
+  .contact-btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .contact-btn-outline:hover { border-color: var(--text); opacity: 1; }
+
+  footer { text-align: center; padding: 32px; font-size: 0.75rem; color: var(--text-secondary); border-top: 1px solid var(--border); }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s var(--ease), transform 0.55s var(--ease); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 700px) {
+    .hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px 40px; }
+    .hero-photo { order: -1; }
+    .hero-photo img { width: 160px; height: 190px; }
+    section { padding: 48px 24px; }
+    .section-divider { padding: 0 24px; }
+    nav { padding: 0 20px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 0.75rem; }
+    .project-card { padding: 24px; grid-template-columns: 1fr; }
+    .project-visual { max-width: 240px; }
+    .exp-item { grid-template-columns: 1fr; gap: 6px; }
+  }
+  @media (max-width: 440px) { .nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-name">Jagan</div>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-text">
+    <div class="hero-tagline">Product Manager &bull; AI &amp; Automation &bull; API Integrations</div>
+    <h1>Hi! I'm Jagan</h1>
+    <p class="hero-desc">I love building products that make life easier through automation and thoughtful design. My experience spans AI-driven solutions, API integrations, and digital platforms, working across teams to bring ideas to life and create seamless user experiences.</p>
+    <p class="hero-desc" style="margin-top: 14px;">I've worked on enterprise integrations, EdTech platforms, and AI-powered automation tools, always focusing on solving real problems with practical solutions.</p>
+    <p class="hero-desc" style="margin-top: 14px;">Currently, I'm experimenting with AI agents, automation, and scalable product solutions. Always looking for new ways to build and innovate.</p>
+    <div class="hero-logos">
+      <p>Product Leadership Experience at</p>
+      <div class="logo-row">
+        <span class="logo-pill">The Phoenix</span>
+        <span class="logo-pill">Deloitte</span>
+        <span class="logo-pill">Devtown</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="headshot.png" alt="Jagan Ajayakumar" />
+  </div>
+</header>
+
+<div class="section-divider"><hr></div>
+
+<section id="projects">
+  <h2 class="section-header reveal">Projects</h2>
+
+  <!-- Empower -->
+  <div class="project-card reveal">
+    <div>
+      <span class="project-industry phoenix">The Phoenix &bull; Nonprofit</span>
+      <h3 class="project-name">Empower — 21-Agent AI Support System</h3>
+      <span class="project-stat phoenix">2,044 users piloted</span>
+      <span class="project-stat phoenix">21 agents</span>
+      <p class="project-desc">Led the end-to-end product development of Empower, a 21-agent agentic AI system designed to provide emotional support and personalized event recommendations for addiction recovery communities. Built with LangChain, LangGraph, Google ADK, and MCP servers, coordinating across 10+ stakeholders from concept to pilot launch. Deliberately sunset after analysis showed it risked replacing human connection — a product decision rooted in user wellbeing over engagement metrics.</p>
+      <div class="tags">
+        <span class="tag">Multi-Agent Orchestration</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">Google ADK</span>
+        <span class="tag">Product Strategy</span>
+      </div>
+    </div>
+    <div class="project-visual">
+      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="90" cy="90" r="24" fill="none" stroke="#C84B31" stroke-width="2.5"/>
+        <text x="90" y="95" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#C84B31" font-weight="600">ORCH</text>
+        <circle cx="90" cy="30" r="12" fill="#C84B3118" stroke="#C84B31" stroke-width="1.5"/><text x="90" y="34" text-anchor="middle" font-size="7" fill="#C84B31">EMO</text>
+        <circle cx="142" cy="50" r="12" fill="#C84B3118" stroke="#C84B31" stroke-width="1.5"/><text x="142" y="54" text-anchor="middle" font-size="7" fill="#C84B31">EVT</text>
+        <circle cx="158" cy="100" r="12" fill="#C84B3118" stroke="#C84B31" stroke-width="1.5"/><text x="158" y="104" text-anchor="middle" font-size="7" fill="#C84B31">REC</text>
+        <circle cx="135" cy="148" r="12" fill="#C84B3118" stroke="#C84B31" stroke-width="1.5"/><text x="135" y="152" text-anchor="middle" font-size="7" fill="#C84B31">MEM</text>
+        <circle cx="90" cy="165" r="12" fill="#C84B3118" stroke="#C84B31" stroke-width="1.5"/><text x="90" y="169" text-anchor="middle" font-size="7" fill="#C84B31">USR</text>
+        <circle cx="45" cy="148" r="12" fill="#C84B3118" stroke="#C84B31" stroke-width="1.5"/><text x="45" y="152" text-anchor="middle" font-size="7" fill="#C84B31">CTX</text>
+        <circle cx="22" cy="100" r="12" fill="#C84B3118" stroke="#C84B31" stroke-width="1.5"/><text x="22" y="104" text-anchor="middle" font-size="7" fill="#C84B31">RAG</text>
+        <circle cx="38" cy="50" r="12" fill="#C84B3118" stroke="#C84B31" stroke-width="1.5"/><text x="38" y="54" text-anchor="middle" font-size="7" fill="#C84B31">API</text>
+        <line x1="90" y1="42" x2="90" y2="66" stroke="#C84B3140" stroke-width="1"/>
+        <line x1="132" y1="57" x2="112" y2="77" stroke="#C84B3140" stroke-width="1"/>
+        <line x1="146" y1="100" x2="114" y2="95" stroke="#C84B3140" stroke-width="1"/>
+        <line x1="126" y1="140" x2="108" y2="110" stroke="#C84B3140" stroke-width="1"/>
+        <line x1="90" y1="153" x2="90" y2="114" stroke="#C84B3140" stroke-width="1"/>
+        <line x1="54" y1="140" x2="72" y2="110" stroke="#C84B3140" stroke-width="1"/>
+        <line x1="34" y1="100" x2="66" y2="95" stroke="#C84B3140" stroke-width="1"/>
+        <line x1="48" y1="57" x2="68" y2="77" stroke="#C84B3140" stroke-width="1"/>
+        <text x="90" y="12" text-anchor="middle" font-size="7" fill="#6B6B66" font-family="sans-serif">21 Agents</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Partner Email Agent -->
+  <div class="project-card reveal">
+    <div>
+      <span class="project-industry phoenix">The Phoenix &bull; Nonprofit</span>
+      <h3 class="project-name">Partner Email Automation Agent</h3>
+      <p class="project-desc">Built a RAG-powered AI agent to automate partner email responses at The Phoenix. The agent retrieves relevant context from organizational knowledge bases using retrieval-augmented generation, drafts contextually accurate replies, and routes complex queries to the appropriate team member. Reduced manual email processing time and improved response consistency across partner communications.</p>
+      <div class="tags">
+        <span class="tag">RAG</span>
+        <span class="tag">AI Agents</span>
+        <span class="tag">Workflow Automation</span>
+        <span class="tag">API Integrations</span>
+      </div>
+    </div>
+    <div class="project-visual">
+      <svg viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="30" width="52" height="36" rx="4" fill="none" stroke="#C84B31" stroke-width="1.5"/>
+        <polyline points="20,30 46,52 72,30" fill="none" stroke="#C84B31" stroke-width="1.5"/>
+        <text x="46" y="80" text-anchor="middle" font-size="7" fill="#6B6B66" font-family="sans-serif">Inbound</text>
+        <line x1="78" y1="48" x2="100" y2="48" stroke="#C84B3160" stroke-width="1" stroke-dasharray="4,3"/>
+        <polygon points="100,44 108,48 100,52" fill="#C84B3160"/>
+        <rect x="110" y="28" width="56" height="40" rx="8" fill="#C84B3110" stroke="#C84B31" stroke-width="1.5"/>
+        <text x="138" y="46" text-anchor="middle" font-size="9" fill="#C84B31" font-weight="600" font-family="sans-serif">RAG</text>
+        <text x="138" y="58" text-anchor="middle" font-size="7" fill="#C84B31" font-family="sans-serif">Agent</text>
+        <rect x="115" y="90" width="46" height="28" rx="4" fill="none" stroke="#C84B3180" stroke-width="1"/>
+        <text x="138" y="107" text-anchor="middle" font-size="7" fill="#6B6B66" font-family="sans-serif">Knowledge</text>
+        <line x1="138" y1="68" x2="138" y2="90" stroke="#C84B3140" stroke-width="1" stroke-dasharray="3,2"/>
+        <rect x="115" y="130" width="46" height="20" rx="4" fill="#2D5A2710" stroke="#2D5A27" stroke-width="1"/>
+        <text x="138" y="143" text-anchor="middle" font-size="7" fill="#2D5A27" font-family="sans-serif">Auto-Reply</text>
+        <line x1="138" y1="118" x2="138" y2="130" stroke="#2D5A2760" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Volunteer Compliance Chatbot -->
+  <div class="project-card reveal">
+    <div>
+      <span class="project-industry phoenix">The Phoenix &bull; Nonprofit</span>
+      <h3 class="project-name">Volunteer Compliance Chatbot</h3>
+      <p class="project-desc">Designed and deployed an AI chatbot to streamline volunteer onboarding and compliance at The Phoenix. The chatbot answers frequently asked questions about policies, requirements, and procedures, reducing the support burden on staff while ensuring volunteers get immediate, accurate guidance. Integrated with internal knowledge bases and designed with guardrails to escalate sensitive queries to human team members.</p>
+      <div class="tags">
+        <span class="tag">Conversational AI</span>
+        <span class="tag">Product Management</span>
+        <span class="tag">User Research</span>
+      </div>
+    </div>
+    <div class="project-visual">
+      <svg viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg">
+        <rect x="16" y="20" width="100" height="30" rx="12" fill="#C84B3112" stroke="#C84B31" stroke-width="1"/>
+        <text x="66" y="39" text-anchor="middle" font-size="8" fill="#C84B31" font-family="sans-serif">What do I need?</text>
+        <rect x="50" y="60" width="120" height="30" rx="12" fill="#2D5A2710" stroke="#2D5A27" stroke-width="1"/>
+        <text x="110" y="79" text-anchor="middle" font-size="8" fill="#2D5A27" font-family="sans-serif">Background check + ...</text>
+        <rect x="16" y="100" width="90" height="30" rx="12" fill="#C84B3112" stroke="#C84B31" stroke-width="1"/>
+        <text x="61" y="119" text-anchor="middle" font-size="8" fill="#C84B31" font-family="sans-serif">How long does it...</text>
+        <circle cx="155" cy="135" r="16" fill="#2D5A2710" stroke="#2D5A27" stroke-width="1.5"/>
+        <text x="155" y="139" text-anchor="middle" font-size="9" fill="#2D5A27" font-weight="600" font-family="sans-serif">AI</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- UTD Dining Hall -->
+  <div class="project-card reveal">
+    <div>
+      <span class="project-industry">Restaurant &bull; AI</span>
+      <h3 class="project-name">UTD Dining Hall Inventory Agent</h3>
+      <span class="project-stat">Live in production</span>
+      <p class="project-desc">Built and product-managed an AI-powered Inventory Management Agent for the UTD Dining Hall and a local restaurant. The agent enables natural language inventory tracking integrated with Airtable for real-time data management. It interprets user requests, updates stock levels, and proactively identifies items below threshold for reordering. Built with n8n, OpenRouter Chat, and custom functions. Convinced UTD Dining Hall leadership and a local restaurant to pilot the solution, demonstrating measurable operational efficiency improvements.</p>
+      <div class="tags">
+        <span class="tag">AI Agents</span>
+        <span class="tag">n8n</span>
+        <span class="tag">Airtable</span>
+        <span class="tag">Product Management</span>
+        <span class="tag">Customer Research</span>
+      </div>
+    </div>
+    <div class="project-visual">
+      <svg viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="12" width="100" height="24" rx="8" fill="#2D5A2710" stroke="#2D5A27" stroke-width="1"/>
+        <text x="60" y="28" text-anchor="middle" font-size="7" fill="#2D5A27" font-family="sans-serif">"Add 5 boxes pasta"</text>
+        <rect x="40" y="52" width="60" height="32" rx="6" fill="#2D5A2712" stroke="#2D5A27" stroke-width="1.5"/>
+        <text x="70" y="66" text-anchor="middle" font-size="8" fill="#2D5A27" font-weight="600" font-family="sans-serif">AI Agent</text>
+        <text x="70" y="76" text-anchor="middle" font-size="6" fill="#6B6B66" font-family="sans-serif">n8n + OpenRouter</text>
+        <line x1="70" y1="36" x2="70" y2="52" stroke="#2D5A2750" stroke-width="1"/>
+        <ellipse cx="70" cy="110" rx="36" ry="10" fill="none" stroke="#2D5A27" stroke-width="1.2"/>
+        <rect x="34" y="110" width="72" height="20" fill="var(--bg)" stroke="none"/>
+        <line x1="34" y1="110" x2="34" y2="130" stroke="#2D5A27" stroke-width="1.2"/>
+        <line x1="106" y1="110" x2="106" y2="130" stroke="#2D5A27" stroke-width="1.2"/>
+        <ellipse cx="70" cy="130" rx="36" ry="10" fill="none" stroke="#2D5A27" stroke-width="1.2"/>
+        <text x="70" y="124" text-anchor="middle" font-size="7" fill="#6B6B66" font-family="sans-serif">Airtable</text>
+        <line x1="70" y1="84" x2="70" y2="100" stroke="#2D5A2750" stroke-width="1" stroke-dasharray="3,2"/>
+        <rect x="120" y="100" width="56" height="22" rx="4" fill="#C84B3110" stroke="#C84B31" stroke-width="1"/>
+        <text x="148" y="114" text-anchor="middle" font-size="6.5" fill="#C84B31" font-family="sans-serif">Low stock alert</text>
+        <line x1="106" y1="115" x2="120" y2="112" stroke="#C84B3140" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- WhatsApp Calendar -->
+  <div class="project-card reveal">
+    <div>
+      <span class="project-industry">AI</span>
+      <h3 class="project-name">WhatsApp AI Calendar Agent</h3>
+      <p class="project-desc">Developed a WhatsApp AI Scheduling Assistant that automates meeting coordination using n8n, Google Calendar, and OpenRouter's LLMs. The AI agent listens for scheduling requests in WhatsApp, checks availability, and either confirms the event or suggests alternatives — all without manual input.</p>
+      <div class="tags">
+        <span class="tag">AI Agents</span>
+        <span class="tag">Workflow Automation</span>
+        <span class="tag">API Integrations</span>
+      </div>
+    </div>
+    <div class="project-visual">
+      <svg viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="50" r="22" fill="#25D36610" stroke="#25D366" stroke-width="1.5"/>
+        <text x="40" y="46" text-anchor="middle" font-size="7" fill="#25D366" font-weight="600" font-family="sans-serif">WA</text>
+        <text x="40" y="56" text-anchor="middle" font-size="6" fill="#25D366" font-family="sans-serif">Chat</text>
+        <line x1="62" y1="50" x2="88" y2="50" stroke="#6B6B6640" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="90" y="32" width="46" height="36" rx="6" fill="#2D5A2710" stroke="#2D5A27" stroke-width="1.5"/>
+        <text x="113" y="48" text-anchor="middle" font-size="8" fill="#2D5A27" font-weight="600" font-family="sans-serif">AI</text>
+        <text x="113" y="60" text-anchor="middle" font-size="6" fill="#2D5A27" font-family="sans-serif">Agent</text>
+        <rect x="100" y="90" width="50" height="40" rx="4" fill="none" stroke="#2D5A27" stroke-width="1"/>
+        <rect x="100" y="90" width="50" height="12" rx="4" fill="#2D5A2715"/>
+        <text x="125" y="100" text-anchor="middle" font-size="7" fill="#2D5A27" font-family="sans-serif">Calendar</text>
+        <line x1="110" y1="110" x2="140" y2="110" stroke="#E8E6E1" stroke-width="0.5"/>
+        <rect x="112" y="113" width="8" height="4" rx="1" fill="#2D5A2730"/>
+        <line x1="113" y1="68" x2="120" y2="90" stroke="#2D5A2740" stroke-width="1" stroke-dasharray="3,2"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- LeadGen Flow -->
+  <div class="project-card reveal">
+    <div>
+      <span class="project-industry">Real Estate</span>
+      <h3 class="project-name">LeadGen Flow</h3>
+      <p class="project-desc">Designed and product-managed "LeadGen Flow," an AI-powered lead generation and web scraping workflow for small businesses. Conducted user research to identify inefficiencies in lead sourcing for real estate agents, then built a solution that scrapes targeted data, processes it with AI, and delivers actionable leads.</p>
+      <div class="tags">
+        <span class="tag">Product Management</span>
+        <span class="tag">UX Research</span>
+        <span class="tag">Data Analysis</span>
+        <span class="tag">Customer Research</span>
+      </div>
+    </div>
+    <div class="project-visual">
+      <svg viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="40,25 140,25 120,70 60,70" fill="#2D5A2708" stroke="#2D5A27" stroke-width="1.2"/>
+        <text x="90" y="42" text-anchor="middle" font-size="7" fill="#6B6B66" font-family="sans-serif">Web Data</text>
+        <text x="90" y="55" text-anchor="middle" font-size="7" fill="#6B6B66" font-family="sans-serif">Scraped</text>
+        <polygon points="60,74 120,74 108,105 72,105" fill="#2D5A2710" stroke="#2D5A27" stroke-width="1.2"/>
+        <text x="90" y="93" text-anchor="middle" font-size="7" fill="#2D5A27" font-family="sans-serif">AI Filter</text>
+        <polygon points="72,109 108,109 100,135 80,135" fill="#2D5A2718" stroke="#2D5A27" stroke-width="1.5"/>
+        <text x="90" y="126" text-anchor="middle" font-size="7" fill="#2D5A27" font-weight="600" font-family="sans-serif">Leads</text>
+        <circle cx="60" cy="35" r="2" fill="#2D5A2740"/>
+        <circle cx="75" cy="32" r="2" fill="#2D5A2740"/>
+        <circle cx="105" cy="33" r="2" fill="#2D5A2740"/>
+        <circle cx="120" cy="36" r="2" fill="#2D5A2740"/>
+        <circle cx="90" cy="30" r="2" fill="#2D5A2740"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<section id="cases">
+  <h2 class="section-header reveal">Product Case</h2>
+  <div class="project-card project-card-full reveal">
+    <div>
+      <span class="project-industry deloitte">Deloitte &bull; Healthcare</span>
+      <h3 class="project-name">IUdo — Pfizer Patient Support App</h3>
+      <span class="project-stat">Launched 2 months early</span>
+      <span class="project-stat">3 markets</span>
+      <p class="project-desc">Led the product development, go-to-market strategy, and launch of IUdo, Pfizer's patient support app powered by Salesforce Health Cloud (SaaS), taking over mid-project to drive completion across 3 markets. Conducted user research with patients and Pfizer teams, refining enrollment forms to reduce signup time by 40%. Defined the product roadmap in JIRA, crafted user stories, and iterated features through testing, reducing first-use friction by 15%. Streamlined RESTful API testing with cross-functional teams, cutting timelines by 20%. Drove go-to-market execution with phased rollouts, launching 2 months early via targeted demos.</p>
+      <div class="tags">
+        <span class="tag">Product Strategy</span>
+        <span class="tag">Salesforce Health Cloud</span>
+        <span class="tag">User Research</span>
+        <span class="tag">API Integrations</span>
+        <span class="tag">Go-to-Market</span>
+        <span class="tag">KPI Definition</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<section id="experience">
+  <h2 class="section-header reveal">Experience</h2>
+  <div class="reveal">
+    <div class="exp-item">
+      <div class="exp-period">2023 – 2026</div>
+      <div>
+        <div class="exp-role">AI Product Lead</div>
+        <div class="exp-company">The Phoenix — National Health & Wellness Nonprofit</div>
+        <p class="exp-desc">Led AI product strategy and built multiple AI systems including Empower (21-agent orchestration), a RAG-powered partner email agent, volunteer compliance chatbot, and established the organization's first AI governance framework.</p>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-period">2022 – 2023</div>
+      <div>
+        <div class="exp-role">Product Manager</div>
+        <div class="exp-company">Deloitte — Pfizer Patient Support (IUdo)</div>
+        <p class="exp-desc">Led product development and GTM strategy for Pfizer's patient support app on Salesforce Health Cloud. Launched across 3 markets, 2 months ahead of schedule.</p>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-period">2020 – 2022</div>
+      <div>
+        <div class="exp-role">Founding Product Manager</div>
+        <div class="exp-company">Devtown — EdTech Startup</div>
+        <p class="exp-desc">Co-shaped product strategy as a founding member, driving initial revenue through paid certifications. Launched the MVP mobile app, boosted DAU 50%, improved revenue conversion 18%, and grew enrollment 26% via GTM strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<section id="skills">
+  <h2 class="section-header reveal">What I Bring to the Table</h2>
+  <div class="skills-grid reveal">
+    <div class="skill-card"><h3>AI &amp; Agents</h3><p>Multi-agent orchestration, RAG pipelines, LLM integration, workflow automation</p></div>
+    <div class="skill-card"><h3>Product Strategy</h3><p>Roadmapping, feature prioritization, KPI definition, competitive analysis</p></div>
+    <div class="skill-card"><h3>User Research</h3><p>Customer research, persona development, usability testing, user journey mapping</p></div>
+    <div class="skill-card"><h3>Platform &amp; APIs</h3><p>API integrations, platform development, Salesforce, AWS, ecosystem design</p></div>
+    <div class="skill-card"><h3>Technical</h3><p>Python, PySpark, machine learning, data analysis, software engineering</p></div>
+    <div class="skill-card"><h3>Delivery</h3><p>Agile, Scrum, backlog management, cross-functional team leadership</p></div>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<section id="contact" class="contact-section">
+  <h2 class="section-header reveal">Let's Get in Touch</h2>
+  <p class="contact-sub reveal">Open to new opportunities and interesting conversations.</p>
+  <div class="contact-links reveal">
+    <a href="mailto:jagankaneajay@gmail.com" class="contact-btn contact-btn-primary">Email Me</a>
+    <a href="https://www.linkedin.com/in/jagan-ajaya/" target="_blank" rel="noopener" class="contact-btn contact-btn-outline">LinkedIn</a>
+  </div>
+</section>
+
+<footer>&copy; 2026 Jagan Ajayakumar</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
